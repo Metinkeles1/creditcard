@@ -1,0 +1,6 @@
+<form [formGroup]="cardForm">
+    <input type="text" formControlName="name">
+</form>
+
+<div>Form içeriği: {{cardForm.value | json}}</div>
+<div>Form içeriği: {{cardForm.valid ? "evet":"hayır"}}</div>
