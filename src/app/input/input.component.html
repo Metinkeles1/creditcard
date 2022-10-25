@@ -1,0 +1,17 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label>{{label}}</label>
+            <input type="text" class="form-control" [formControl]="control" [ngClass]="{'is-invalid':showErrors()}">
+        </div>
+    </form>
+
+    <ng-container *ngIf="showErrors()">
+        <div class="invalid-feedback" *ngIf="control.errors?.['required']">
+            *Zorunlu Alan
+        </div>
+        <div class="invalid-feedback" *ngIf="control.errors?.['minlength']">
+            {{control.errors?.['minlength']?.['actualLength']}} karakter içermektedir, fakat minimum {{control.errors?.['minlength']?.['requiredLength']}} karakter olmalıdır
+        </div>
+    </ng-container>
+</div>

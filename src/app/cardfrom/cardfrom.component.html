@@ -1,11 +1,5 @@
 <form [formGroup]="cardForm">
-    <input type="text" formControlName="name">
-    <div *ngIf="cardForm.get('name')?.errors?.['required']">
-        *Zorunlu Alan
-    </div>
-    <div *ngIf="cardForm.get('name')?.errors?.['minlength']">
-        {{cardForm.get('name')?.errors?.['minlength']?.['actualLength']}} karakter içermektedir, fakat minimum {{cardForm.get('name')?.errors?.['minlength']?.['requiredLength']}} karakter olmalıdır
-    </div>
+    <app-input label="Ad Soyad" [control]="$any(cardForm.get('name'))"></app-input>
 </form>
 
 <div>Form içeriği: {{cardForm.value | json}}</div>
