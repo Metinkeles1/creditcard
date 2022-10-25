@@ -3,6 +3,7 @@
     <app-input label="Kart Numarası" [control]="$any(cardForm.get('cardNumber'))"></app-input>
     <app-input label="Son Kullanma Tarihi" [control]="$any(cardForm.get('expiration'))"></app-input>
     <app-input label="Güvenlik Kodu" [control]="$any(cardForm.get('securityCode'))"></app-input>
+    <button class="btn btn-warning" (click)="ResetForm()" type="button">Temizle</button>
     <button class="btn btn-info" [disabled]="cardForm.invalid" type="submit">Kaydet</button>
 </form>
 

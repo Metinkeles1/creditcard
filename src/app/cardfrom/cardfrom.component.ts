@@ -38,4 +38,8 @@ export class CardfromComponent implements OnInit {
     console.log("metin keleş");
   }
 
+  ResetForm() {
+    this.cardForm.reset();
+  }
+
 }
