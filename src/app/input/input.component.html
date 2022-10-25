@@ -1,24 +1,22 @@
-<div class="container">
-    <form>
-        <div class="form-group">
-            <label>{{label}}</label>
-            <input type="text" class="form-control" [formControl]="control" [ngClass]="{'is-invalid':showErrors()}">
-        </div>
-    </form>
+<form>
+    <div class="form-group">
+        <label>{{label}}</label>
+        <input type="text" class="form-control" [formControl]="control" [ngClass]="{'is-invalid':showErrors()}">
+    </div>
+</form>
 
-    <ng-container *ngIf="showErrors()">
-        <div class="">
-            <div *ngIf="control.errors?.['required']">
-                *Zorunlu Alan
-            </div>
-            <div *ngIf="control.errors?.['minlength']">
-                {{control.errors?.['minlength']?.['actualLength']}} karakter içermektedir, fakat minimum {{control.errors?.['minlength']?.['requiredLength']}} karakter olmalıdır
-            </div>
+<ng-container *ngIf="showErrors()">
+    <div class="">
+        <div *ngIf="control.errors?.['required']">
+            *Zorunlu Alan
         </div>
-        <div>
-            <div *ngIf="control.errors?.['maxlength']">
-                {{control.errors?.['maxlength']?.['actualLength']}} karakter içermektedir, fakat minimum {{control.errors?.['maxlength']?.['requiredLength']}} karakter olmalıdır
-            </div>
+        <div *ngIf="control.errors?.['minlength']">
+            {{control.errors?.['minlength']?.['actualLength']}} karakter içermektedir, fakat minimum {{control.errors?.['minlength']?.['requiredLength']}} karakter olmalıdır
         </div>
-    </ng-container>
-</div>
+    </div>
+    <div>
+        <div *ngIf="control.errors?.['maxlength']">
+            {{control.errors?.['maxlength']?.['actualLength']}} karakter içermektedir, fakat minimum {{control.errors?.['maxlength']?.['requiredLength']}} karakter olmalıdır
+        </div>
+    </div>
+</ng-container>
