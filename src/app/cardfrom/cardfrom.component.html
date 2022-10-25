@@ -1,5 +1,9 @@
-<form [formGroup]="cardForm">
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
     <app-input label="Ad Soyad" [control]="$any(cardForm.get('name'))"></app-input>
+    <app-input label="Kart Numarası" [control]="$any(cardForm.get('cardNumber'))"></app-input>
+    <app-input label="Son Kullanma Tarihi" [control]="$any(cardForm.get('expiration'))"></app-input>
+    <app-input label="Güvenlik Kodu" [control]="$any(cardForm.get('securityCode'))"></app-input>
+    <button class="btn btn-info" [disabled]="cardForm.invalid" type="submit">Kaydet</button>
 </form>
 
 <div>Form içeriği: {{cardForm.value | json}}</div>
